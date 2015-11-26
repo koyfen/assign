@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="admin">
+<head>
+	<!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+	
+	<!-- Optional theme -->
+	
+	<link rel="stylesheet" href="css_addmin.css">
+	<!-- Latest compiled and minified JavaScript -->
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="admin.js"></script>
+	<meta charset="UTF-8">
+	<title>admin</title>
+</head>
+<body ng-controller="AppController as app">
+
+	<div class="col-sm-3">
+		<div class="candidate">
+		  <h2>Candidate</h2>
+		</div>
+		<div ng-repeat ="show in app.d">
+			<div class="each">
+				{{show.name}}&nbsp&nbsp&nbsp{{show.surname}} <br>	
+				<button type="button" class="btn btn_info glyphicon glyphicon-align-justify btn-md"  data-toggle="modal" data-target="#myModal" ng-click="app.modal($index+1,show._id)"></button>
+				<button type="button" class="btn btn-primary btn-md" ng-click="app.f1tos2(show)">Next</button>
+				<button type="button" class="btn btn-danger btn-md" ng-click="app.lost($index,show._id)">Lost</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-3">
+		<div class="call_interview">
+		  <h2>Call interview</h2>
+		</div>
+		<div ng-repeat ="show in app.c">
+			<div class="each">
+				{{show.name}}&nbsp&nbsp&nbsp{{show.surname}} <br>	
+				<button type="button" class="btn btn_info glyphicon glyphicon-align-justify btn-md"  data-toggle="modal" data-target="#myModal" ng-click="app.modal($index+1,show._id)"></button>
+				<button type="button" class="btn btn-primary btn-md" ng-click="app.s2tot3(show)">Next</button>
+				<button type="button" class="btn btn-danger btn-md" ng-click="app.lost2($index,show._id)">Lost</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-3">
+		<div class="interview">
+		  <h2>Interview</h2>
+		</div>
+		<div ng-repeat ="show in app.i">
+			<div class="each">
+				{{show.name}}&nbsp&nbsp&nbsp{{show.surname}} <br>
+				
+				<button type="button" class="btn btn_info glyphicon glyphicon-align-justify btn-md"  data-toggle="modal" data-target="#myModal" ng-click="app.modal($index+1,show._id)"></button>
+				<button type="button" class="btn btn-primary btn-md" ng-click="app.t3tof4(show)"> Next</button>
+				<button type="button" class="btn btn-danger btn-md" ng-click="app.lost3($index,show._id)">Lost</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-3">
+		<div class="hire">
+		  <h2>Hire</h2>
+		</div>
+		<div ng-repeat ="show in app.h">
+			<div class="each">
+				{{show.name}}&nbsp&nbsp&nbsp{{show.surname}} <br>	
+				<button type="button" class="btn btn-primary btn-md" >Next</button>
+				<button type="button" class="btn btn-danger btn-md"  >Lost</button>
+			</div>
+		</div>
+	</div>
+
+	
+
+	
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Candidate Detail</h4>
+      </div>
+
+      <div class="modal-body" >
+		
+	        <span class="title">Name : </span> {{app.detail[0].name}} <br>
+	        <span class="title">Surname :</span> {{app.detail[0].surname}} <br>
+	        <span class="title">Age : </span>{{app.detail[0].age}} <br>
+	        <span class="title">Email :</span>{{app.detail[0].email}} <br>
+	        <span class="title"> Sex  : </span>{{app.detail[0].sex}} <br>
+	        <span class="title">Tel : </span>{{app.detail[0].tel}} <br>
+	        <span class="title">Facebook : </span>{{app.detail[0].facebook}} <br> 
+	        <span class="title">Twitter : </span>{{app.detail[0].twitter}} <br>
+	        <span class="title">Github : </span>{{app.detail[0].github}} <br>
+	     
+            <center>	
+			<table >
+				<thead>
+			      <tr>
+			        
+			        <th class="title">Skill</th>
+			        
+			        <th class="title">Level</th>
+				    
+
+			      </tr>
+			    </thead>
+			    <tbody>
+			    	<tr ng-repeat="skill in app.detail[0].skills">
+			    		
+				  		<td class="skillName">{{skill.name}}</td>
+				  		
+				  		<td class="level">{{skill.level}}</td>
+				  		
+				  	</tr>
+			    </tbody>
+			  </table>
+
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+	
+</body>
+</html>

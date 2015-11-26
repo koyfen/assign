@@ -1,0 +1,21 @@
+.top{
+	cursor: pointer;
+	float: right;
+}
+.info,.skill,.edu{
+	margin-top: 7%;
+
+}
+
+.btnn{
+	float: right;
+}
+.btnp{
+	float: left;
+}
+a{
+	cursor: hand;
+}
+.sk{
+	font-size: 20px;
+}

@@ -1,0 +1,78 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700,400);
+
+body {
+  background-color: #aaa;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+.title{
+  color: #192FF0;
+}
+
+.candidate {
+  position: relative;
+  
+ 
+  margin: 1em;
+  padding: 1em 2em;
+  text-align: left;
+  background-color: #fff;
+  color: #000;
+  border-left: 10px solid #EF1717;
+}
+.skillName{
+  color: red;
+}
+.level{
+  text-align: right;
+}
+
+.each{
+  margin: 1em;
+  padding: 1em 2em;
+  padding-bottom: 3em;
+  text-align: left;
+  background-color: #fff;
+  
+}
+.btn{
+  float: right;
+}
+
+.call_interview{
+
+  position: relative;
+  
+ 
+  margin: 1em;
+  padding: 1em 2em;
+  text-align: left;
+  background-color: #fff;
+  color: #000;
+  border-left: 10px solid #40C5ED;
+}
+.btn_info{
+  float: left;
+}
+.interview{
+  position: relative;
+  margin: 1em;
+  padding: 1em 2em;
+  text-align: left;
+  background-color: #fff;
+  color: #000;
+  border-left: 10px solid #CB37C1;
+}
+
+.hire{
+  position: relative;
+  margin: 1em;
+  padding: 1em 2em;
+  text-align: left;
+  background-color: #fff;
+  color: #000;
+  border-left: 10px solid #09F751;
+
+}
+
+

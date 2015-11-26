@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+	<link rel="stylesheet" href="css.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="app.js"></script>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<body ng-controller="AppController as app">
+ 
+	  	<nav class="navbar-fixed-top">
+	  	
+			<!-- <ul class="nav nav-pills top">
+			  <li role="presentation" class="tag icon-tag" id="hid1"><a ><h3>ข้อมูลส่วนตัว</h3></a></li>
+			  <li role="presentation" id="hid2" ><a ><h3>การศึกษา</h3></a></li>
+			  <li role="presentation" id="hid3"><a ><h3>ความสามารถ</h3></a></li>
+			  
+			</ul> -->
+		</nav>
+		<form >
+		<div class="col-sm-12 info" id="info" >
+
+			<div class="col-sm-4"></div>
+			<div class="input-group input-group-lg col-sm-4" >
+			  <span class="input-group-addon" id="sizing-addon1">ชื่อ</span>
+			  <input type="text" ng-model="input.name" class="form-control" placeholder="Name" aria-describedby="sizing-addon1">
+			</div>
+			<br>
+			<div class="col-sm-4"></div>
+			<div class="input-group input-group-lg col-sm-4" >
+			  <span class="input-group-addon" id="sizing-addon1">นามสกุล</span>
+			  <input type="text" ng-model="input.surname" class="form-control" placeholder="Surname" aria-describedby="sizing-addon1">
+			</div>
+			<br>
+			<div class="col-sm-4"></div>
+			<div class="input-group input-group-lg col-sm-4" >
+			  <span class="input-group-addon" id="sizing-addon1">อายุ</span>
+			  <input type="number" min=0 ng-model="input.age" class="form-control" placeholder="Age" aria-describedby="sizing-addon1">
+			</div>
+			
+			<br>
+			<div class="col-sm-4"></div>
+			<div class="input-group input-group-lg col-sm-4" >
+			  <span class="input-group-addon" id="sizing-addon1">E-mail</span>
+			  <input type="email" ng-model="input.email" class="form-control" placeholder="example@domain.com" aria-describedby="sizing-addon1">
+			</div>
+			<br>
+
+			<div class="col-sm-4"></div>
+			<div class="input-group input-group-lg col-sm-4" >
+			  <span class="input-group-addon" id="sizing-addon1">เพศ</span>
+			  <input type="text" ng-model="input.sex" class="form-control" placeholder="Your sex" aria-describedby="sizing-addon1">
+			 
+			</div>
+			
+			<br>
+			<div class="col-sm-4"></div>
+			<div class="input-group input-group-lg col-sm-4" >
+			  <span class="input-group-addon" id="sizing-addon1">หมายเลขโทรศัพท์</span>
+			  <input type="tel" ng-model="input.tel" class="form-control" placeholder="phone number" aria-describedby="sizing-addon1">
+			</div>
+			<div class="col-sm-4"></div>
+			
+
+			<br>
+			<div class="col-sm-4"></div>
+			<div class="input-group input-group-lg col-sm-4" >
+			  <span class="input-group-addon" id="sizing-addon1">Facebook</span>
+			  <input type="text" ng-model="input.facebook" class="form-control" placeholder="Facebook" aria-describedby="sizing-addon1">
+			</div>
+			<br>
+			<div class="col-sm-4"></div>
+			<div class="input-group input-group-lg col-sm-4" >
+			  <span class="input-group-addon" id="sizing-addon1">Twitter</span>
+			  <input type="text" ng-model="input.twitter" class="form-control" placeholder="Twitter" aria-describedby="sizing-addon1">
+			</div>
+			<br>
+			<div class="col-sm-4"></div>
+			<div class="input-group input-group-lg col-sm-4" >
+			  <span class="input-group-addon" id="sizing-addon1">Github</span>
+			  <input type="text" ng-model="input.github" class="form-control" placeholder="Github" aria-describedby="sizing-addon1">
+			</div>
+			<div class="col-sm-4"></div>
+
+			
+
+
+		<br>
+			
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4 sk">
+			<div  ng-repeat="skill in app.skills">
+
+			
+				 {{skill.name}}{{skill.level}}
+				</div>
+				<input type="text" ng-model="input.skillName" style="width: 200px;" >
+	 			 <input type="number" ng-model="input.skillLevel" style="width: 50px;">	
+			</div>
+			<div class="col-sm-4"></div>
+
+			<div class="col-sm-12">
+			
+			
+
+
+			
+			<button ng-click="app.addSkill(input)">Add</button>
+			
+
+			</div>
+			
+						
+
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				  <!-- <button type="clear" class="btn btn-warning btn-lg btnp" id="btnp3" >Clear</button> -->
+
+				  <button type="button" class="btn btn-success btn-lg btnn" id="btnh3" ng-click="app.send(input)">Save</button>
+			</div>
+			<div class="col-sm-4"></div>
+
+		</div>
+		</form>
+		
+
+	
+</body>
+</html>
