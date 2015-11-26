@@ -3,14 +3,15 @@ angular.module('app', [])
     var app = this
    app.koy = "show ng";
    app.skills = [
-      {
-        name: 'Angular.js',
-        level: 10,
-      },
-      {
-        name: 'Node.js',
-        level: 10,
-      }
+      
+      // {
+      //   name: 'Angular.js',
+      //   level: 10,
+      // },
+      // {
+      //   name: 'Node.js',
+      //   level: 10,
+      // }
     ] 
 
 

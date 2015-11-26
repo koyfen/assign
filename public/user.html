@@ -99,31 +99,37 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4 sk">
 			<div  ng-repeat="skill in app.skills">
-
+					
 			
-				 {{skill.name}}{{skill.level}}
+				 {{skill.name}}{{skill.level}} 
 				</div>
-				<input type="text" ng-model="input.skillName" style="width: 200px;" >
-	 			 <input type="number" ng-model="input.skillLevel" style="width: 50px;">	
+				<table>
+					<tr>
+						<td>
+							<input type="text" ng-model="input.skillName" style="width: 200px;" >
+						</td>
+						<td>
+							<div class="sl">
+						  <div class="slider">
+						  <input type = "range" min="0" max="10" value="5"  ng-model="input.skillLevel"/>
+							
+						  </div>
+					   </div>
+						</td>
+					</tr>
+				</table>
+				
+	 			
 			</div>
-			<div class="col-sm-4"></div>
+			<div class="col-sm-4"><button ng-click="app.addSkill(input)">Add</button></div>
 
-			<div class="col-sm-12">
-			
-			
-
-
-			
-			<button ng-click="app.addSkill(input)">Add</button>
-			
-
-			</div>
+		
 			
 						
 
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">
-				  <!-- <button type="clear" class="btn btn-warning btn-lg btnp" id="btnp3" >Clear</button> -->
+				
 
 				  <button type="button" class="btn btn-success btn-lg btnn" id="btnh3" ng-click="app.send(input)">Save</button>
 			</div>

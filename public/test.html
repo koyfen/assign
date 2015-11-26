@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="test.js"></script>
 </head>
-<body>
+<body ng-controller= "AppController as app">
+  
 	<div class="sl">
 	  <div class="slider">
-	  <input type = "range" min="0" max="10" onchange="rangevalue.value=value"/>
-		<output id="rangevalue">5</output>
+	  <input type = "range" min="0" max="10"  ng-model="app.value"/>
+		
 	  </div>
   </div>
+  {{app.value}}
   <style>
 	.sl {
   display: flex;
-  width: 500px;
-  height: 500px;
-  margin: auto;
-  text-alignt: center;
+  
+  
 }
 
 .slider {
-  width: 100%;
-  margin: 50% auto;
+  width: 35%;
+  
 }
 
 input[type="range"] {
@@ -47,6 +49,7 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 30px;
   box-shadow: 0px 0px 3px #3c6d59;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 input[type="range"]::-webkit-slider-thumb:hover {
   background-color: #457d66;
