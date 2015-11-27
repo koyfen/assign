@@ -13,19 +13,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 	<script src="app.js"></script>
 	<meta charset="UTF-8">
-	<title>test</title>
+	<title>Application Form</title>
 </head>
 <body ng-controller="AppController as app">
  
-	  	<nav class="navbar-fixed-top">
 	  	
-			<!-- <ul class="nav nav-pills top">
-			  <li role="presentation" class="tag icon-tag" id="hid1"><a ><h3>ข้อมูลส่วนตัว</h3></a></li>
-			  <li role="presentation" id="hid2" ><a ><h3>การศึกษา</h3></a></li>
-			  <li role="presentation" id="hid3"><a ><h3>ความสามารถ</h3></a></li>
-			  
-			</ul> -->
-		</nav>
 		<form >
 		<div class="col-sm-12 info" id="info" >
 
@@ -98,42 +90,61 @@
 			
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4 sk">
-			<div  ng-repeat="skill in app.skills">
+				<div  ng-repeat="skill in app.skills">
+					<table>
+						<tr>
+							<td>
+								<input type="text"  class="form-control" value={{skill.name}} aria-describedby="sizing-addon1" disabled="true">
+							</td>
+							<td>
+								<input type="text"  class="form-control" value={{skill.level}} aria-describedby="sizing-addon1" disabled="true" style="width: 35px;">
+							</td>
+						</tr>
+					</table>
 					
-			
-				 {{skill.name}}{{skill.level}} 
+					
+					 <!-- {{skill.name}}{{skill.level}}  -->
 				</div>
-				<table>
-					<tr>
-						<td>
-							<input type="text" ng-model="input.skillName" style="width: 200px;" >
-						</td>
-						<td>
-							<div class="sl">
-						  <div class="slider">
-						  <input type = "range" min="0" max="10" value="5"  ng-model="input.skillLevel"/>
-							
-						  </div>
-					   </div>
-						</td>
-					</tr>
-				</table>
+					<table>
+						<tr>
+							<td>
+								<!-- <div class="input-group">
+							      <div class="input-group-addon">Your Skill</div> -->
+							      <input type="text" ng-model="input.skillName" style="width: 200px;" placeholder="Your Skill" >
+							      
+							    <!-- </div> -->
+								
+							</td>
+							<td>&nbsp;&nbsp;</td>
+							<td >
+								<div class="sl">
+							  		<div class="slider">
+							  			<input type = "range" min="0" max="10" value="5"  ng-model="input.skillLevel" class="form-control" style="margin-left=5px;" >
+								
+							  		</div>
+						   		</div>
+							</td>
+							<td>&nbsp;&nbsp;</td>
+							<td>
+								<button ng-click="app.addSkill(input)" class="btn btn-primary">Add</button>
+							</td>
+						</tr>
+					</table>
 				
 	 			
 			</div>
-			<div class="col-sm-4"><button ng-click="app.addSkill(input)">Add</button></div>
 
 		
-			
+			<div class="col-sm-8 col-xl-8 col-sx-8">
 						
 
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4">
+				<center>
+					 <button type="button" class="btn btn-success btn-lg btnn" id="btnh3" ng-click="app.send(input)">Save</button>
+				</center>
 				
 
-				  <button type="button" class="btn btn-success btn-lg btnn" id="btnh3" ng-click="app.send(input)">Save</button>
 			</div>
-			<div class="col-sm-4"></div>
+			
 
 		</div>
 		</form>
