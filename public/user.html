@@ -89,42 +89,44 @@
 		<br>
 			
 			<div class="col-sm-4"></div>
-			<div class="col-sm-4 sk">
+			<div  class="col-sm-4">
 				<div  ng-repeat="skill in app.skills">
-					<table>
-						<tr>
-							<td>
-								<input type="text"  class="form-control" value={{skill.name}} aria-describedby="sizing-addon1" disabled="true">
-							</td>
-							<td>
-								<input type="text"  class="form-control" value={{skill.level}} aria-describedby="sizing-addon1" disabled="true" style="width: 35px;">
-							</td>
-						</tr>
-					</table>
+				
+					<div class="col-sm-6">
+						 {{skill.name}}
+					</div>
+					<div class="col-sm-6">
+						<div class="progress" >
+						  <div class="progress-bar progress-bar-danger"  role="progressbar" aria-valuenow="{{skill.level}}"
+						  aria-valuemin="0" aria-valuemax="10"  style="width:{{skill.level}}0%">
+						    {{skill.level}}
+						  </div>
+						</div>
+						
+					</div>
 					
-					
-					 <!-- {{skill.name}}{{skill.level}}  -->
+					 
 				</div>
 					<table>
 						<tr>
 							<td>
 								<!-- <div class="input-group">
 							      <div class="input-group-addon">Your Skill</div> -->
-							      <input type="text" ng-model="input.skillName" style="width: 200px;" placeholder="Your Skill" >
+							      <input type="text" ng-model="app.input.skillName" style="width: 200px;" placeholder="Your Skill" >
 							      
 							    <!-- </div> -->
 								
 							</td>
-							<td>&nbsp;&nbsp;</td>
-							<td >
+							
+							<td align="center">
 								<div class="sl">
 							  		<div class="slider">
-							  			<input type = "range" min="0" max="10" value="5"  ng-model="input.skillLevel" class="form-control" style="margin-left=5px;" >
-								
+							  			<input type = "range"  min="0" max="10" ng-init="app.input.skillLevel='5'"   ng-model="app.input.skillLevel" class="form-control"  >
+											
 							  		</div>
 						   		</div>
 							</td>
-							<td>&nbsp;&nbsp;</td>
+							
 							<td>
 								<button ng-click="app.addSkill(input)" class="btn btn-primary">Add</button>
 							</td>

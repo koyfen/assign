@@ -21,13 +21,16 @@ angular.module('app', [])
     
     app.addSkill = function(input) {
       var newSkill = {
-        name: input.skillName,
-        level: input.skillLevel
+        name: app.input.skillName,
+        level: app.input.skillLevel
+
       }
       app.skills.push(newSkill);
 
-      input.skillName = ''
-      input.skillLevel = ''
+      app.input.skillName = ''
+      app.input.skillLevel = ''
+      app.input.skillLevel = 5
+
     };
    
    app.send = function(input){
