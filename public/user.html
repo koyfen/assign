@@ -50,7 +50,13 @@
 			<div class="col-sm-4"></div>
 			<div class="input-group input-group-lg col-sm-4" >
 			  <span class="input-group-addon" id="sizing-addon1">เพศ</span>
-			  <input type="text" ng-model="input.sex" class="form-control" placeholder="Your sex" aria-describedby="sizing-addon1">
+			 <!--  <input type="text" ng-model="input.sex" class="form-control" placeholder="Your sex" aria-describedby="sizing-addon1"> -->
+			  	<label class="radio-inline">
+				  <input type="radio" ng-model="input.sex" name="inlineRadioOptions" id="inlineRadio1" value="ชาย"> ชาย
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" ng-model="input.sex" name="inlineRadioOptions" id="inlineRadio2" value="หญิง"> หญิง
+				</label>
 			 
 			</div>
 			
@@ -112,7 +118,7 @@
 							<td>
 								<!-- <div class="input-group">
 							      <div class="input-group-addon">Your Skill</div> -->
-							      <input type="text" ng-model="input.skillName" style="width: 200px;" placeholder="Your Skill" >
+							      <input type="text" ng-model="input.skillName" style="width: 200px;" placeholder="Your Skill" class="form-control">
 							      
 							    <!-- </div> -->
 								

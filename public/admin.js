@@ -76,6 +76,7 @@ angular.module('admin', [])
          })
         
      }
+     
      app.f1tos2 = function(data){
       
        $http.put('/candidate/',{_id : data._id ,

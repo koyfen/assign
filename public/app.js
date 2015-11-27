@@ -44,7 +44,7 @@ angular.module('app', [])
    		$http.post('/api/info', data).then(function success (response) {
             console.log(response);
             alert("Register done")
-           // window.location="end.html"
+           window.location="end.html"
             
             })
    	

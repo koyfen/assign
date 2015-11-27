@@ -38,7 +38,10 @@ body {
 .btn{
   float: right;
 }
-
+.btn-date{
+  float: left;
+  margin-left: 10px;*/
+}
 .call_interview{
 
   position: relative;
@@ -74,5 +77,8 @@ body {
   border-left: 10px solid #09F751;
 
 }
-
+.dateAndTime{
+  width: 800px;
+  height: 500px;
+}
 
